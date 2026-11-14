@@ -198,7 +198,7 @@ jobs:
       # turns `uv sync` from ~45 s cold to ~5 s warm.
       - name: Install uv
         if: steps.pass.outputs.hit != 'true'
-        uses: astral-sh/setup-uv@caf0cab7a618c569241d31dcd442f54681755d39 # v3.2.4
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -766,7 +766,7 @@ jobs:
       # into the deleted build folder, and the Linux entry (the CLI, which AppImage starts)
       # rejected the switches the packaged smoke test launches Electron with.
       # Release smoke runs it on macOS and Linux, next to the real packaged app.
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         if: steps.pass.outputs.hit != 'true' && runner.os == 'Windows'
         with:
           version: '0.12.13'
@@ -894,7 +894,7 @@ jobs:
         with:
           workspaces: native/desktop-bridge -> target
           key: release-smoke-${{ matrix.target }}
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         if: steps.pass.outputs.hit != 'true'
         with:
           version: '0.12.13'
@@ -1053,7 +1053,7 @@ jobs:
 
       - name: Install uv
         if: steps.pass.outputs.hit != 'true'
-        uses: astral-sh/setup-uv@caf0cab7a618c569241d31dcd442f54681755d39 # v3.2.4
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
